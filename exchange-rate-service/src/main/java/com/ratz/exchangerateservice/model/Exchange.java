@@ -1,26 +1,40 @@
 package com.ratz.exchangerateservice.model;
 
 
+import javax.persistence.*;
 import java.io.Serializable;
 import java.math.BigDecimal;
 
+@Entity
 public class Exchange implements Serializable {
 
   private static final long serialVersionUID = 1L;
 
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
+
+  @Column(name = "from_currency", length = 3, nullable = false)
   private String from;
+
+  @Column(name = "to_currency")
   private String to;
+
+  @Column(nullable = false)
   private BigDecimal conversionFactor;
-  private BigDecimal conversionValue;
+
+  @Transient
+  private BigDecimal convertedValue;
+
+  @Transient
   private String environment;
 
-  public Exchange(Long id, String from, String to, BigDecimal conversionFactor, BigDecimal conversionValue, String environment) {
+  public Exchange(Long id, String from, String to, BigDecimal conversionFactor, BigDecimal convertedValue, String environment) {
     this.id = id;
     this.from = from;
     this.to = to;
     this.conversionFactor = conversionFactor;
-    this.conversionValue = conversionValue;
+    this.convertedValue = convertedValue;
     this.environment = environment;
   }
 
@@ -61,11 +75,11 @@ public class Exchange implements Serializable {
   }
 
   public BigDecimal getConversionValue() {
-    return conversionValue;
+    return convertedValue;
   }
 
   public void setConversionValue(BigDecimal conversionValue) {
-    this.conversionValue = conversionValue;
+    this.convertedValue = conversionValue;
   }
 
   public String getEnvironment() {
