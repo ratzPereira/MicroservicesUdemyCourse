@@ -17,8 +17,8 @@ public class FooBarController {
   Logger logger = LoggerFactory.getLogger(FooBarController.class);
 
   @GetMapping("foo-bar")
-  @Retry(name = "foo-bar")
-  public String fooBar(){
+  @Retry(name = "foo-bar", fallbackMethod = "fallbackMethod")
+  public String fooBar() {
 
     logger.info("Request to foo bar is refused!!");
 
@@ -26,5 +26,10 @@ public class FooBarController {
 
     return response.getBody();
     //return "foo bar";
+  }
+
+  public String fallbackMethod(Exception ex) {
+
+    return "FallbackMethod of foo bar!!";
   }
 }
