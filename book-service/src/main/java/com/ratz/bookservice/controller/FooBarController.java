@@ -1,7 +1,9 @@
 package com.ratz.bookservice.controller;
 
 
+import io.github.resilience4j.bulkhead.annotation.Bulkhead;
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
+import io.github.resilience4j.ratelimiter.annotation.RateLimiter;
 import io.github.resilience4j.retry.annotation.Retry;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,15 +21,17 @@ public class FooBarController {
 
   @GetMapping("foo-bar")
   //@Retry(name = "foo-bar", fallbackMethod = "fallbackMethod")
-  @CircuitBreaker(name = "default", fallbackMethod = "fallbackMethod")
+  //@CircuitBreaker(name = "default", fallbackMethod = "fallbackMethod")
+  @RateLimiter(name = "default")
+  @Bulkhead(name = "default")
   public String fooBar() {
 
     logger.info("Request to foo bar is refused!!");
 
-    ResponseEntity<String> response = new RestTemplate().getForEntity("http://localhost:8080/foo-bar", String.class);
+    //ResponseEntity<String> response = new RestTemplate().getForEntity("http://localhost:8080/foo-bar", String.class);
 
-    return response.getBody();
-    //return "foo bar";
+    //return response.getBody();
+    return "foo bar";
   }
 
   public String fallbackMethod(Exception ex) {
