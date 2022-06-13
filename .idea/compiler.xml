@@ -21,6 +21,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="API-gateway" options="-parameters" />
       <module name="book-service" options="-parameters" />
       <module name="exchange-rate-service" options="-parameters" />
       <module name="naming-service" options="-parameters" />
