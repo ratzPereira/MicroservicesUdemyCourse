@@ -7,11 +7,13 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="exchange-rate-service" />
-        <module name="book-service" />
         <module name="naming-service" />
+        <module name="book-service" />
+        <module name="API-gateway" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="API-gateway" target="17" />
       <module name="book-service" target="17" />
       <module name="exchange-rate-service" target="17" />
       <module name="naming-service" target="17" />
