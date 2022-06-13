@@ -5,6 +5,11 @@ spring:
   application:
     name: book-service
 
+  cloud:
+    config:
+      import-check:
+        enabled: false
+
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/book_service?useSSL=false&serverTimezone=UTC
