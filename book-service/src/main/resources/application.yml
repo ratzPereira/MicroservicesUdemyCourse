@@ -33,9 +33,7 @@ spring:
     serialization:
       fail-on-empty-beans: false
     default-property-inclusion: non_null
-springdoc:
-  swagger-ui:
-    enabled: true
+
 eureka:
   client:
     service-url:
@@ -60,3 +58,8 @@ resilience4j:
     instances:
       default:
         max-concurrent-calls: 10
+
+springdoc:
+  api-docs:
+    path: book-service/v3/api-docs
+  show-actuator: true
