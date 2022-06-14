@@ -10,12 +10,15 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class APIGatewayConfiguration {
 
-  @Bean
-  public RouteLocator gatewayRouter(RouteLocatorBuilder builder){
+  // CHANGED TO APP YML
 
-    return builder.routes()
-        .route(p -> p.path("/exchange-service/**").uri("lb://exchange-service"))
-        .route(p -> p.path("/book-service/**").uri("lb://book-service"))
-        .build();
-  }
+
+//  @Bean
+//  public RouteLocator gatewayRouter(RouteLocatorBuilder builder){
+//
+//    return builder.routes()
+//        .route(p -> p.path("/exchange-service/**").uri("lb://exchange-service"))
+//        .route(p -> p.path("/book-service/**").uri("lb://book-service"))
+//        .build();
+//  }
 }
