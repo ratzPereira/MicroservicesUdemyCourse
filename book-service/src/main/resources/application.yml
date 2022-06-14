@@ -33,7 +33,9 @@ spring:
     serialization:
       fail-on-empty-beans: false
     default-property-inclusion: non_null
-
+springdoc:
+  swagger-ui:
+    enabled: true
 eureka:
   client:
     service-url:

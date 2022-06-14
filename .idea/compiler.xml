@@ -14,8 +14,8 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="API-gateway" target="17" />
-      <module name="book-service" target="17" />
-      <module name="exchange-rate-service" target="17" />
+      <module name="book-service" target="11" />
+      <module name="exchange-rate-service" target="11" />
       <module name="naming-service" target="17" />
     </bytecodeTargetLevel>
   </component>

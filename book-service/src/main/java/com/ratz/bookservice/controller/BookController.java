@@ -4,6 +4,8 @@ import com.ratz.bookservice.model.Book;
 import com.ratz.bookservice.proxy.ExchangeProxy;
 import com.ratz.bookservice.repository.BookRepository;
 import com.ratz.bookservice.response.Exchange;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 
-
+@Tag(name = "Book API Endpoint")
 @RestController
 @RequestMapping("book-service")
 public class BookController {
@@ -29,6 +31,7 @@ public class BookController {
   private ExchangeProxy exchangeProxy;
 
 
+  @Operation(summary = "Find specific book by ID")
   @GetMapping("{id}/{currency}")
   public Book findBook(@PathVariable Long id, @PathVariable String currency ){
 
