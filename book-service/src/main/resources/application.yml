@@ -29,6 +29,10 @@ spring:
     user: root
     password: root
 
+  sleuth:
+    sampler:
+      probability: 1.0
+
   jackson:
     serialization:
       fail-on-empty-beans: false

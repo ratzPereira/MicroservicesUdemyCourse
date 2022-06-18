@@ -24,6 +24,11 @@ spring:
     user: root
     password: root
 
+  sleuth:
+    sampler:
+      probability: 1.0
+
+
 eureka:
   client:
     service-url:
