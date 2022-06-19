@@ -24,4 +24,16 @@ jobs:
       - name: Build Eureka Naming Server Container Image
         working-directory: ./naming-service
         run: mvn spring-boot:build-image -DskipTests
+        
+      - name: Build API gateway Container Image
+        working-directory: ./API-gateway
+        run: mvn spring-boot:build-image -DskipTests
+        
+      - name: Build Book Service Container Image
+        working-directory: ./book-service
+        run: mvn spring-boot:build-image -DskipTests
+        
+      - name: Build ExchangeService Container Image
+        working-directory: ./exchange-rate-service
+        run: mvn spring-boot:build-image -DskipTests
 
