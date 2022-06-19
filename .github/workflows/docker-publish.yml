@@ -36,4 +36,9 @@ jobs:
       - name: Build ExchangeService Container Image
         working-directory: ./exchange-rate-service
         run: mvn spring-boot:build-image -DskipTests
+        
+      - name: Docker Compose Build
+        working-directory: .
+        run: docker-compose build
+
 
