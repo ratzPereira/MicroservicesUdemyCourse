@@ -1,0 +1,11 @@
+version: '3.4'
+
+services:
+  naming-server:
+    image: ratzcom/naming-service:0.0.1-SNAPSHOT
+    ports:
+      - 8761:8761
+
+networks:
+  ratzcom-network:
+    driver: bridge
