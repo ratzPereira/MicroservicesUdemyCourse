@@ -1,0 +1,5 @@
+com\ratz\exchangerateservice\repository\ExchangeRepository.class
+com\ratz\exchangerateservice\config\OpenAPIConfiguration.class
+com\ratz\exchangerateservice\model\Exchange.class
+com\ratz\exchangerateservice\controller\ExchangeController.class
+com\ratz\exchangerateservice\ExchangeRateServiceApplication.class
